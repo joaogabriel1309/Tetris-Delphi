@@ -1,0 +1,167 @@
+unit Peca;
+
+interface
+
+uses
+  System.Types, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TPeca = class (TObject)
+  private
+
+  public
+    function CriarPeca(fPaintBox: TPaintBox; peca: Integer): TRect;
+    procedure MoverPeca;
+    procedure MoverPecaEsqueda;
+    procedure MoverPecaDireita;
+    procedure MoverPecaCima;
+    procedure MoverPecaBaixo;
+    procedure GuardarPeca;
+    procedure UtilizarPecaGuardada;
+
+  end;
+
+var
+  paceAtual: array[1..2,1..4] of Integer;
+  posicaoX, posicaoY: Integer;
+
+const
+  CNT_VERMELHO = $000000FF;
+  CNT_AZUL = $00FF0000;
+  CNT_VERDE = $0000FF00;
+  CNT_AMARELO = $FFFF00;
+
+implementation
+
+{ TPeca }
+
+function TPeca.CriarPeca(fPaintBox: TPaintBox; peca: Integer): TRect;
+var
+  fTamanhoBloco: Integer;
+  fRect: TRect;
+  I: Integer;
+begin
+  fTamanhoBloco := fPaintBox.Width div 10;
+
+  case peca of
+    1:
+    begin
+       paceAtual[1,1] := 3;
+       paceAtual[1,2] := 4;
+       paceAtual[1,3] := 5;
+       paceAtual[1,4] := 5;
+       paceAtual[2,1] := -1;
+       paceAtual[2,2] := -1;
+       paceAtual[2,3] := -1;
+       paceAtual[2,4] := -2;
+       for I := 1 to 4 do
+       begin
+          fRect.Left := paceAtual[1,I] * fTamanhoBloco;
+          fRect.Top := paceAtual[2,I] * fTamanhoBloco;
+          fRect.Right := fRect.Left + fTamanhoBloco;
+          fRect.Bottom := fRect.Top + fTamanhoBloco;
+          fPaintBox.Canvas.Brush.Color := CNT_VERMELHO;
+          fPaintBox.Canvas.FillRect(fRect);
+       end;
+    end;
+    2:
+    begin
+       paceAtual[1,1] := 3;
+       paceAtual[1,2] := 4;
+       paceAtual[1,3] := 3;
+       paceAtual[1,4] := 4;
+       paceAtual[2,1] := 5;
+       paceAtual[2,2] := 5;
+       paceAtual[2,3] := 6;
+       paceAtual[2,4] := 6;
+       for I := 1 to 4 do
+       begin
+          fRect.Left := paceAtual[1,I] * fTamanhoBloco;
+          fRect.Top := paceAtual[2,I] * fTamanhoBloco;
+          fRect.Right := fRect.Left + fTamanhoBloco;
+          fRect.Bottom := fRect.Top + fTamanhoBloco;
+          fPaintBox.Canvas.Brush.Color := CNT_VERDE;
+          fPaintBox.Canvas.FillRect(fRect);
+       end;
+    end;
+    3:
+    begin
+       paceAtual[1,1] := 2;
+       paceAtual[1,2] := 3;
+       paceAtual[1,3] := 4;
+       paceAtual[1,4] := 5;
+       paceAtual[2,1] := 5;
+       paceAtual[2,2] := 5;
+       paceAtual[2,3] := 5;
+       paceAtual[2,4] := 5;
+       for I := 1 to 4 do
+       begin
+          fRect.Left := paceAtual[1,I] * fTamanhoBloco;
+          fRect.Top := paceAtual[2,I] * fTamanhoBloco;
+          fRect.Right := fRect.Left + fTamanhoBloco;
+          fRect.Bottom := fRect.Top + fTamanhoBloco;
+          fPaintBox.Canvas.Brush.Color := CNT_AZUL;
+          fPaintBox.Canvas.FillRect(fRect);
+       end;
+    end;
+    4:
+    begin
+       paceAtual[1,1] := 3;
+       paceAtual[1,2] := 4;
+       paceAtual[1,3] := 5;
+       paceAtual[1,4] := 4;
+       paceAtual[2,1] := 6;
+       paceAtual[2,2] := 6;
+       paceAtual[2,3] := 6;
+       paceAtual[2,4] := 5;
+       for I := 1 to 4 do
+       begin
+          fRect.Left := paceAtual[1,I] * fTamanhoBloco;
+          fRect.Top := paceAtual[2,I] * fTamanhoBloco;
+          fRect.Right := fRect.Left + fTamanhoBloco;
+          fRect.Bottom := fRect.Top + fTamanhoBloco;
+          fPaintBox.Canvas.Brush.Color := CNT_AMARELO;
+          fPaintBox.Canvas.FillRect(fRect);
+       end;
+    end;
+  end;
+
+  Result := fRect;
+end;
+
+procedure TPeca.GuardarPeca;
+begin
+  //
+end;
+
+procedure TPeca.MoverPeca;
+begin
+
+end;
+
+procedure TPeca.MoverPecaBaixo;
+begin
+   //
+end;
+
+procedure TPeca.MoverPecaCima;
+begin
+  //
+end;
+
+procedure TPeca.MoverPecaDireita;
+begin
+  //implementar a movimentacao da peca
+end;
+
+procedure TPeca.MoverPecaEsqueda;
+begin
+  //implementar a movimentacao da peca
+end;
+
+procedure TPeca.UtilizarPecaGuardada;
+begin
+  //
+end;
+
+end.

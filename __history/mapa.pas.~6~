@@ -1,0 +1,34 @@
+unit mapa;
+
+interface
+
+uses
+  Global;
+
+type
+  TMapa = class(TObject)
+  private
+
+  public
+    procedure CriarMapaNormal;
+
+  end;
+
+var
+  fMapa: TMapa;
+implementation
+
+{ TMapa }
+
+procedure TMapa.CriarMapaNormal;
+var
+  I,J: Integer;
+begin
+   for I := 1 to 10 do
+   begin
+      for J := 1 to 20 do
+         fMapa[I,J] := 0;
+   end;
+end;
+
+end.

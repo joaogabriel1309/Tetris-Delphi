@@ -1,0 +1,8 @@
+unit Global;
+
+interface
+  type
+    TGlobalMapa = Array[0..9, 0..20] of Integer;
+implementation
+
+end.

@@ -1,0 +1,9 @@
+unit Global;
+
+interface
+  type
+    TGlobalMapa = Array[1..10, 1..20] of Integer;
+    TGlobalPaceAtual = array[1..2,1..4] of Integer;
+implementation
+
+end.

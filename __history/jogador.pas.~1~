@@ -1,0 +1,39 @@
+unit jogador;
+
+interface
+  type TJogador = class
+    private
+      function getVidaJogador: Integer;
+      procedure setVidaJogador(const Value: Integer);
+      function getDificudade: Integer;
+      procedure setDificudade(const Value: Integer);
+    public
+      property VidaJogador: Integer read getVidaJogador write setVidaJogador;
+      property Dificudade: Integer read getDificudade write setDificudade;
+
+  end;
+implementation
+
+{ TJogador }
+
+function TJogador.getDificudade: Integer;
+begin
+  Result := Dificudade;
+end;
+
+function TJogador.getVidaJogador: Integer;
+begin
+  result := VidaJogador;
+end;
+
+procedure TJogador.setDificudade(const Value: Integer);
+begin
+   //implementar a logica da dificuldade do jogo
+end;
+
+procedure TJogador.setVidaJogador(const Value: Integer);
+begin
+   //implementar a logica da vida do jogador
+end;
+
+end.

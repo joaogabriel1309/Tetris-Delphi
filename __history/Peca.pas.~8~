@@ -1,0 +1,87 @@
+unit Peca;
+
+interface
+
+uses
+  System.Types, Vcl.StdCtrls, Vcl.ExtCtrls;
+type
+  TPeca = class (TObject)
+  private
+  public
+    function CriarPeca(fPaintBox: TPaintBox): TRect;
+    procedure MoverPecaEsqueda;
+    procedure MoverPecaDireita;
+    procedure MoverPecaCima;
+    procedure MoverPecaBaixo;
+    procedure GuardarPeca;
+    procedure UtilizarPecaGuardada;
+  end;
+
+var
+  paceAtual: array[0..3, 0..3] of Integer;
+
+const
+  CNT_VERMELHO = $000000FF;
+  CNT_AZUL = $00FF0000;
+  CNT_VERDE = $0000FF00;
+  CNT_AMARELO = $FFFF00;
+
+implementation
+
+
+{ TPeca }
+
+function TPeca.CriarPeca(fPaintBox: TPaintBox): TRect;
+var
+  fTamanhoBloco: Integer;
+  fRect: TRect;
+begin
+  fTamanhoBloco := 626 div 10;
+
+  // Calcula a posição do bloco
+  fRect.Left := x * fTamanhoBloco;
+  fRect.Top := y * fTamanhoBloco;
+  fRect.Right := fRect.Left + fTamanhoBloco;
+  fRect.Bottom := fRect.Top + fTamanhoBloco;
+
+  case cor of
+    1: fPaintBox.Canvas.Brush.Color := CNT_VERMELHO;
+    2: fPaintBox.Canvas.Brush.Color := CNT_AZUL;
+    3: fPaintBox.Canvas.Brush.Color := CNT_VERDE;
+    4: fPaintBox.Canvas.Brush.Color := CNT_AMARELO;
+  end;
+
+  Result := fRect;
+end;
+
+procedure TPeca.GuardarPeca;
+begin
+  //
+end;
+
+procedure TPeca.MoverPecaBaixo;
+begin
+   //
+end;
+
+procedure TPeca.MoverPecaCima;
+begin
+  //
+end;
+
+procedure TPeca.MoverPecaDireita;
+begin
+  //implementar a movimentacao da peca
+end;
+
+procedure TPeca.MoverPecaEsqueda;
+begin
+  //implementar a movimentacao da peca
+end;
+
+procedure TPeca.UtilizarPecaGuardada;
+begin
+  //
+end;
+
+end.

@@ -1,0 +1,33 @@
+unit mapa;
+
+interface
+
+  type
+  TResultArray = Array[0..9, 0..20] of Integer;
+  TMapa = class(TObject)
+    private
+    public
+      function CriarMapaNormal: TResultArray;
+      procedure PausarJogo;
+  end;
+implementation
+
+{ TMapa }
+
+function TMapa.CriarMapaNormal: TResultArray;
+var
+  I,J: Integer;
+begin
+   for I := 0 to 9 do
+   begin
+      for J := 0 to 20 do
+         Result[I,J] := 0;
+   end;
+end;
+
+procedure TMapa.PausarJogo;
+begin
+
+end;
+
+end.

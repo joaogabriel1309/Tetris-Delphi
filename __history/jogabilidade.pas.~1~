@@ -1,0 +1,24 @@
+unit jogabilidade;
+
+interface
+  type TJogabilidade = class
+    public
+      procedure IniciarJogo;
+      procedure PausarJogo;
+
+  end;
+implementation
+
+{ TJogabilidade }
+
+procedure TJogabilidade.IniciarJogo;
+begin
+
+end;
+
+procedure TJogabilidade.PausarJogo;
+begin
+
+end;
+
+end.

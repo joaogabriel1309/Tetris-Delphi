@@ -1,0 +1,36 @@
+unit jogabilidade;
+
+interface
+
+uses
+  mapa;
+
+type TJogabilidade = class
+  public
+    procedure IniciarJogo;
+    procedure PausarJogo;
+end;
+
+var
+  fMapa: TMapa;
+
+implementation
+
+{ TJogabilidade }
+
+procedure TJogabilidade.IniciarJogo;
+begin
+   fMapa := TMapa.Create();
+   try
+      fMapa.CriarMapaNormal;
+   finally
+      fMapa.Free;
+   end;
+end;
+
+procedure TJogabilidade.PausarJogo;
+begin
+
+end;
+
+end.

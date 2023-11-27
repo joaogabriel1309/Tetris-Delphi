@@ -1,0 +1,18 @@
+unit mapa;
+
+interface
+  type TMapa = class
+    private
+    public
+      procedure CriarMapa(Dificudade: Integer);
+  end;
+implementation
+
+{ TMapa }
+
+procedure TMapa.CriarMapa(Dificudade: Integer);
+begin
+
+end;
+
+end.
